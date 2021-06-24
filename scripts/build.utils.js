@@ -1,6 +1,6 @@
 /** Utilities used by both build.js and server.js */
 
-const fs = require('fs')
+const fs = require('fs-extra')
 const esbuild = require('esbuild')
 const Print = require('./console.utils').Print
 
@@ -17,11 +17,15 @@ function copyIndexHtml() {
   fs.writeFileSync(dist + '/index.html', html)
 }
 
+function copyAssets() {
+  fs.copy('src/assets', 'target/dist/assets');
+}
+
 function build(isProd) {
   const buildOptions = {
     entryPoints: ['src/index.js'],
     bundle: true,
-    sourcemap: true,
+    sourcemap: false,
     outfile: dist + '/app.js',
     minify: !!isProd
   };
@@ -55,6 +59,7 @@ function checkNodeVersion(majorMinimum) {
 module.exports = {
   clean,
   copyIndexHtml,
+  copyAssets,
   build,
   nodeVersion,
   checkNodeVersion

@@ -1,4 +1,19 @@
-import * as DomUtils from './utils/DomUtils.js'
+import { FirstGameScene } from './first-scene';
+import Phaser from 'phaser';
 
-const time = (new Date()).toLocaleString()
-DomUtils.select('#content')[0].innerHTML = `The time now is ${time}`
+const config/*: Phaser.Types.Core.GameConfig*/ = {
+    width: 800,
+    height: 600,
+    type: Phaser.AUTO,
+    parent: 'game-container',
+    physics: {
+      default: 'arcade',
+      arcade: {
+        gravity: { y: 300 },
+        debug: false
+      }
+    },
+    scene: [FirstGameScene]
+  };
+
+new Phaser.Game(config);

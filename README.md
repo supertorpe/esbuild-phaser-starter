@@ -1,4 +1,4 @@
-# esbuild Project Starter
+# esbuild Phaser Starter
 This is a skeletal web/js project using esbuild. It includes the following features
 
 1. Bundling the projects JS code into a single `app.js` file, using [esbuild](https://esbuild.github.io/) bundler.
@@ -31,7 +31,7 @@ Please look at `package.json` scripts section for a quick look at the supported 
 After you clone this repo to your local machine:
 
 ```bash
-cd esbuild-project-starter
+cd esbuild-phaser-starter
 npm ci
 ```
 

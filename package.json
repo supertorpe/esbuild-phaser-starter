@@ -2,18 +2,20 @@
   "name": "esbuild-starter",
   "version": "0.0.4",
   "description": "esbuild project starter",
-  "author": "Abdul Habra",
+  "author": "Abdul Habra & supertorpe",
   "license": "Apache",
   "main": "index.js",
   "engines": {
-    "node": ">=15.0.0",
+    "node": ">=14.0.0",
     "npm": ">=7.0.0"
   },
   "scripts": {
     "clean": "rm -rf target",
     "build": "node scripts/build.js",
     "build:prod": "node scripts/build.js prod",
+    "devolution": "devolution ./target/dist ./target/devolution",
     "server": "node scripts/server.js",
+    "doc": "jsdoc ./src",
     "test": "npm run lint && web-test-runner",
     "test:watch": "web-test-runner --watch",
     "lint": "eslint src --fix",
@@ -22,13 +24,21 @@
   },
   "devDependencies": {
     "@esm-bundle/chai": "^4.3.4",
-    "@web/test-runner": "^0.13.4",
-    "@web/test-runner-commands": "^0.4.5",
+    "@swc/cli": "^0.1.46",
+    "@swc/core": "^1.2.61",
+    "@web/test-runner": "^0.13.12",
+    "@web/test-runner-commands": "^0.5.4",
     "@web/test-runner-puppeteer": "^0.10.0",
     "chalk": "^4.1.1",
-    "esbuild": "^0.11.20",
-    "eslint": "^7.26.0",
-    "npm-check-updates": "^11.5.11",
-    "serve": "^11.3.2"
+    "devolution": "^2.3.1",
+    "esbuild": "^0.12.9",
+    "eslint": "^7.29.0",
+    "fs-extra": "^10.0.0",
+    "jsdoc": "^3.6.7",
+    "npm-check-updates": "^11.7.1",
+    "serve": "^12.0.0"
+  },
+  "dependencies": {
+    "phaser": "3.55.2"
   }
 }
